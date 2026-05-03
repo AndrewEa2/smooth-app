@@ -62,8 +62,8 @@ void main() {
         colorProvider,
         ChangeNotifierProvider<PriceModel>.value(
           value: model,
-          child: const Scaffold(
-            body: ListView(children: <Widget>[PriceDateCard()]),
+          child: Scaffold(
+            body: ListView(children: const <Widget>[PriceDateCard()]),
           ),
         ),
       ),
