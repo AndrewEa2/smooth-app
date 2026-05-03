@@ -6,7 +6,7 @@ void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
   test('hasACamera returns true when cameras list is not empty', () async {
-      await CameraHelper.init();
+    await CameraHelper.init();
 
     if (CameraHelper.isSupported) {
       final bool deviceHasCamera = (await availableCameras()).isNotEmpty;

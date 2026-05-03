@@ -12,7 +12,9 @@ void main() {
 
     expect(model.hasImage, isFalse);
 
-    final String buttonText = model.hasImage ? 'Change proof' : 'Select a proof';
+    final String buttonText = model.hasImage
+        ? 'Change proof'
+        : 'Select a proof';
 
     expect(buttonText, 'Select a proof');
   });

@@ -18,7 +18,8 @@ void main() {
       'currentThemeMode': 'Light',
     });
 
-    final UserPreferences userPreferences = await UserPreferences.getUserPreferences();
+    final UserPreferences userPreferences =
+        await UserPreferences.getUserPreferences();
     final ThemeProvider themeProvider = ThemeProvider(userPreferences);
 
     addTearDown(themeProvider.dispose);
@@ -41,7 +42,9 @@ void main() {
           ),
           home: const Scaffold(
             body: ProductFooter(
-              actions: <ProductFooterActionBar>[ProductFooterActionBar.addPrice],
+              actions: <ProductFooterActionBar>[
+                ProductFooterActionBar.addPrice,
+              ],
               showSettings: false,
             ),
           ),

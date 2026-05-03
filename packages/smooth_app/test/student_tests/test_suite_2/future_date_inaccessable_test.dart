@@ -20,11 +20,14 @@ void main() {
   testWidgets('disablesDateSelection', (WidgetTester tester) async {
     SharedPreferences.setMockInitialValues(mockSharedPreferences());
 
-    final UserPreferences userPreferences = await UserPreferences.getUserPreferences();
+    final UserPreferences userPreferences =
+        await UserPreferences.getUserPreferences();
     late ProductPreferences productPreferences;
     final ThemeProvider themeProvider = ThemeProvider(userPreferences);
     final ColorProvider colorProvider = ColorProvider(userPreferences);
-    final TextContrastProvider textContrastProvider = TextContrastProvider(userPreferences);
+    final TextContrastProvider textContrastProvider = TextContrastProvider(
+      userPreferences,
+    );
 
     productPreferences = ProductPreferences(
       ProductPreferencesSelection(
@@ -59,9 +62,7 @@ void main() {
         colorProvider,
         ChangeNotifierProvider<PriceModel>.value(
           value: model,
-          child: Scaffold(
-            body: ListView(children: <Widget>[PriceDateCard()]),
-          ),
+          child: Scaffold(body: ListView(children: <Widget>[PriceDateCard()])),
         ),
       ),
     );
@@ -69,8 +70,8 @@ void main() {
 
     expect(find.byType(SmoothLargeButtonWithIcon), findsOneWidget);
 
-    final SmoothLargeButtonWithIcon dateButton =
-        tester.widget<SmoothLargeButtonWithIcon>(
+    final SmoothLargeButtonWithIcon dateButton = tester
+        .widget<SmoothLargeButtonWithIcon>(
           find.byType(SmoothLargeButtonWithIcon),
         );
 

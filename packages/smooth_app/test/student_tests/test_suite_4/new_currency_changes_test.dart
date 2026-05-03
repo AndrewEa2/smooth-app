@@ -39,11 +39,7 @@ void main() {
               SmoothColorsThemeExtension.defaultValues(true),
             ],
           ),
-          home: Scaffold(
-            body: Center(
-              child: CurrencySelector(),
-            ),
-          ),
+          home: Scaffold(body: Center(child: CurrencySelector())),
         ),
       ),
     );

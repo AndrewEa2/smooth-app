@@ -19,7 +19,8 @@ void main() {
       'currentThemeMode': 'Light',
     });
 
-    final UserPreferences userPreferences = await UserPreferences.getUserPreferences();
+    final UserPreferences userPreferences =
+        await UserPreferences.getUserPreferences();
     final ThemeProvider themeProvider = ThemeProvider(userPreferences);
 
     addTearDown(themeProvider.dispose);
@@ -50,9 +51,7 @@ void main() {
                 SmoothColorsThemeExtension.defaultValues(true),
               ],
             ),
-            home: Scaffold(
-              body: PriceAmountCard(index: 0, key: UniqueKey()),
-            ),
+            home: Scaffold(body: PriceAmountCard(index: 0, key: UniqueKey())),
           ),
         ),
       ),

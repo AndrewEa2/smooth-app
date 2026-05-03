@@ -19,7 +19,8 @@ void main() {
       'currentThemeMode': 'Light',
     });
 
-    final UserPreferences userPreferences = await UserPreferences.getUserPreferences();
+    final UserPreferences userPreferences =
+        await UserPreferences.getUserPreferences();
     await userPreferences.setTheme('Light');
 
     final ThemeProvider themeProvider = ThemeProvider(userPreferences);
