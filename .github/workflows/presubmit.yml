@@ -52,6 +52,11 @@ jobs:
       - name: 🧪 Run Tests with coverage
         run: ci/testing.sh
 
+      - name: Run student tests
+        run: flutter test test/student_tests
+        working-directory: ./packages/smooth_app
+
+
       - name: Upload coverage to codecov
         uses: codecov/codecov-action@v5
         with:
