@@ -37,7 +37,8 @@ void main() {
 
     expect(rows, hasLength(1));
 
-    final int lastAccess = rows.first['last_access'] as int;
+    final Object lastAccessValue = rows.first['last_access']!;
+    final int lastAccess = lastAccessValue as int;
     expect((LocalDatabase.nowInMillis() - lastAccess).abs(), lessThan(2000));
   });
 }

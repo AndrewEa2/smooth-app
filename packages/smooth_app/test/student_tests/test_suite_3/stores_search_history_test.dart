@@ -61,7 +61,8 @@ void main() {
     expect(row['osm_key'], osmLocation.osmKey);
     expect(row['osm_value'], osmLocation.osmValue);
 
-    final int lastAccess = row['last_access'] as int;
+    final Object lastAccessValue = row['last_access']!;
+    final int lastAccess = lastAccessValue as int;
     final int now = LocalDatabase.nowInMillis();
     expect((now - lastAccess).abs(), lessThan(2000));
   });

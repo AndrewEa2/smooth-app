@@ -27,7 +27,7 @@ void main() {
       multipleProducts: false,
     );
 
-    final OsmLocation location = OsmLocation(
+    const OsmLocation location = OsmLocation(
       osmId: 1,
       osmType: LocationOSMType.node,
       longitude: 12.34,
